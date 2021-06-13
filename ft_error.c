@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/13 06:56:11 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 08:01:31 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/13 07:33:18 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/13 09:06:39 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"pipex.h"
+#include "pipex.h"
 
-int	main(int argc, char *argv[], char *envp[])
+void    ft_error(char *error, int descriptor)
 {
-	if (argc == 5)
-	{
-		dup_args(argv, envp);
-		pipex();
-		return (0);
-	}
-	// ft_putendl_fd("ARGS ERROR", 2);
-	ft_error("ARGS", 1);
-	return (0);
+    char    *errdescriptor;
+
+    ft_putstr_fd(KRED, 2);
+    ft_putstr_fd("ERROR", 2);
+    if (error == NULL)
+        perror(errdescriptor);
+    else
+    {
+        ft_putstr_fd(":\n", 2);
+        ft_putstr_fd(error, 2);
+    }
+    if (descriptor == 1)
+    {
+        free_args();
+        exit(EXIT_FAILURE);
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 07:51:51 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 11:05:41 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 13:00:32 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,4 @@ void    free_args(void)
     g_args.envp[i] = NULL;
     free(g_args.envp);
     g_args.envp = NULL;
-
 }

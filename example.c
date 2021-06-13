@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 08:07:16 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 09:54:17 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 13:25:52 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,21 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+int     main(int argc, char *argv[], char *envp[])
+{
+    int     ret;
+    char    *path;
+
+    path = "/usr/bin/";
+    ret = execve(path, argv, envp);
+    printf("DONE = 0 | RET = [%d]\n", ret);
+    if (argc == 0)
+    {
+        
+    }
+    return (0);
+}
 
 /**
  * Executes the command "cat scores | grep Villanova".  In this quick-and-dirty
@@ -76,13 +91,4 @@
 
 //       execvp("cat", cat_args);
 //     }
-// }
-
-// int main()
-// {
-    // int fd;
-
-    // fd = open("testfile", O_WRONLY | O_CREAT, 0666);
-    // printf("fd = [%d]\n", fd);
-    // return (0);
 // }

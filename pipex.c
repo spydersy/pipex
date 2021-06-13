@@ -6,15 +6,11 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 07:17:14 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 07:59:38 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 09:50:14 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-
-
-
 
 void    dup_args(char  *argv[], char *envp[])
 {

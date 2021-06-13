@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 07:51:51 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 09:05:50 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 09:57:20 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,15 @@ void    free_args(void)
 
 void    files_checker(void)
 {
-    char    *error_descriptor;
-
     g_args.infile = open(g_args.argv[1], O_RDONLY);
-    g_args.outfile = open(g_args.argv[4], O_WRONLY);
+    g_args.outfile = open(g_args.argv[4], O_WRONLY | O_CREAT, 0666);
     if (g_args.infile < 0)
     {
-        ft_error( "cant open input file", 1);
+        ft_error( "No such file (infile)", 1);
     }
     if (g_args.outfile < 0)
     {
-        ft_error( "cant open output file", 1);        
+        ft_error( "cant open output file", 1);
     }
 }
 

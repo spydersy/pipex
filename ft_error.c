@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 07:33:18 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 09:06:39 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 09:56:18 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    ft_error(char *error, int descriptor)
     char    *errdescriptor;
 
     ft_putstr_fd(KRED, 2);
-    ft_putstr_fd("ERROR", 2);
+    ft_putstr_fd("ERROR ", 2);
     if (error == NULL)
         perror(errdescriptor);
     else

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 08:07:16 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 09:22:20 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 09:54:17 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,11 @@
 //     }
 // }
 
-int main()
-{
-    int fd;
+// int main()
+// {
+    // int fd;
 
-    fd = open("testfile", O_WRONLY | O_CREAT, 0666);
-    printf("fd = [%d]\n", fd);
-}
+    // fd = open("testfile", O_WRONLY | O_CREAT, 0666);
+    // printf("fd = [%d]\n", fd);
+    // return (0);
+// }

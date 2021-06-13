@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 06:56:11 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 08:01:31 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/13 10:43:46 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	main(int argc, char *argv[], char *envp[])
 	{
 		dup_args(argv, envp);
 		pipex();
+		free_args();
 		return (0);
 	}
-	// ft_putendl_fd("ARGS ERROR", 2);
 	ft_error("ARGS", 1);
-	return (0);
+	return (-1);
 }

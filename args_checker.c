@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 10:57:35 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/14 14:55:18 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/14 15:00:50 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void    free_cmd(char *cmd0, char *cmd1)
 
 void    existence(char *cmd0, char *cmd1)
 {
-    if ()
+    int     fd
 }
 
 void    which_cmd(char **cmd0, char **cmd1, char **paths)

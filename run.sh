@@ -1,1 +1,1 @@
-clang-9 -g3 -Wall -Werror -Wextra -fsanitize=address *.c ./libft/*.c -o pipex
+gcc -Wall -Werror -Wextra -g3 -fsanitize=address *.c ./libft/*.c -o pipex

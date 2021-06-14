@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 06:56:33 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 09:37:02 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:47:39 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_args
 t_args          g_args;
 
 int     count(char **arr);
+int     max_of(int i, int j);
 
 void    pipex(void);
 void    free_args(void);

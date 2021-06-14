@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   example.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 08:07:16 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 13:25:52 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:20:45 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-int     main(int argc, char *argv[], char *envp[])
-{
-    int     ret;
-    char    *path;
+// int     main(int argc, char *argv[], char *envp[])
+// {
+//     int     ret;
+//     char    *path;
 
-    path = "/usr/bin/";
-    ret = execve(path, argv, envp);
-    printf("DONE = 0 | RET = [%d]\n", ret);
-    if (argc == 0)
-    {
+//     path = "/usr/bin/";
+//     ret = execve(path, argv, envp);
+//     printf("DONE = 0 | RET = [%d]\n", ret);
+//     if (argc == 0)
+//     {
         
-    }
-    return (0);
-}
+//     }
+//     return (0);
+// }
 
 /**
  * Executes the command "cat scores | grep Villanova".  In this quick-and-dirty

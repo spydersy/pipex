@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 07:51:51 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/13 13:00:32 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:47:29 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int     count(char **arr)
         i++;
     }
     return (i);
+}
+
+int     max_of(int i, int j)
+{
+    if (i < j)
+        return (j);
+    else
+        return (j);
 }
 
 void    free_args(void)

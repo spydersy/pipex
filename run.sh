@@ -1,1 +1,1 @@
-gcc -Wall -Werror -Wextra -g3 -fsanitize=address *.c ./libft/*.c -o pipex
+gcc -Wall -Werror -Wextra -g3   *.c ./libft/*.c -o pipex

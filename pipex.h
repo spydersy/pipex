@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 06:56:33 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/14 12:47:39 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:11:00 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_args
 {
     char        **argv;
     char        **envp;
+    char        **paths;
     int         infile;
     int         outfile;
 }               t_args;
@@ -46,7 +47,9 @@ int     max_of(int i, int j);
 
 void    pipex(void);
 void    free_args(void);
+void    cmd_checker(void);
 void    args_checker(void);
+void    files_checker(void);
 void    ft_error(char *error, int descriptor);
 void    dup_args(char  *argv[], char *envp[]);
 

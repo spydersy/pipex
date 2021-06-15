@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 06:56:33 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/15 15:11:00 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/15 16:24:50 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_args
     int         outfile;
 }               t_args;
 
-t_args          g_args;
+// t_args          g_args;
 
 int     count(char **arr);
 int     max_of(int i, int j);

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 19:20:11 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 19:52:46 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	find_cmd_current_path(char *cmd) // NOT NOW
 	tmp = ft_strjoin("./", cmd);
 	if (tmp == NULL)
 		ft_error(NULL, 1);
-	free(cmd);
 	if (open(tmp, O_RDONLY) < 0)
 	{
 		free(tmp);

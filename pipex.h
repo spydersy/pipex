@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 18:06:48 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 18:57:16 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@
 
 typedef struct  s_data
 {
+	int		*fd;
     char    **content0;
 	char    **content1;
 	char	*filein;
 	char	*fileout;
 	char    **paths;
-	int		*fd;
+	char	*abs_cmd0;
+	char	*abs_cmd1;
 }               t_data;
 
 void    ft_error(char *descriptor, int flag);

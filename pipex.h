@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 13:34:07 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 18:06:48 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,16 @@ typedef struct  s_data
 {
     char    **content0;
 	char    **content1;
+	char	*filein;
+	char	*fileout;
 	char    **paths;
+	int		*fd;
 }               t_data;
 
-int    *file_checker(char *argv[]);
 void    ft_error(char *descriptor, int flag);
 void    cmd_checker(char *argv[], char *envp[], int *fd);
 
 int     pipex(char *argc[], char *envp[]);
+int    *file_checker(char *argv[]);
 int     arguments_checker(char *argc[], char *envp[]);
 #endif

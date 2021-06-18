@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 13:39:49 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 18:10:52 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,9 @@ char    **get_paths(char *envp[])
 	}
 }
 
-void	replace_paths(char **paths, char **argv)
+void	match_paths(char **paths, t_data data)
 {
-	int		i;
-	char	*tmp0;
-	char	*tmp1;
-
-	i = -1;
-	while (paths[++i])
-	{
-		tmp0 = ft_strjoin(paths[i], "/");
-		tmp1 = ft_strjoin(tmp0, argv[2]);
-		free(tmp0);
-		tmp0 = NULL;
-		if (open(tmp1, O_RDONLY))
-		{
-			break ;
-		}
-		free(tmp1);
-		tmp1 = NULL;
-	}
+	
 }
 
 void	find_cmd_current_path(void) // NOT NOW
@@ -67,13 +50,14 @@ void    cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data	data;
 	
-	// printf("[%d][%d]", fd[0], fd[1]);
 	data.content0 = ft_split(argv[2], ' ');
 	data.content1 = ft_split(argv[3], ' ');
 	data.paths = get_paths(envp);
+	data.fd = fd;
+	printf("[%d][%d]", data.fd[0], data.fd[1]);
 	if (data.paths != NULL)
 	{
-		replace_paths(data.paths, argv);
+		match_paths(data.paths, data);
 		return ;
 	}
 		/*	ENV VAR(PATH) NOT FOUND	*/

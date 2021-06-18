@@ -6,14 +6,14 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:13:25 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 12:20:33 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 19:22:37 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int pipex(char *argc[], char *envp[])
+int	pipex(char *argc[], char *envp[])
 {
-    arguments_checker(argc, envp);
-    return (0);
+	arguments_checker(argc, envp);
+	return (0);
 }

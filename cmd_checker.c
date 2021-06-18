@@ -6,17 +6,17 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 19:07:28 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 19:20:11 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char    **get_paths(char *envp[])
+char	**get_paths(char *envp[])
 {
-	int     i;
-	int     cmp;
-	char    **paths;
+	int		i;
+	int		cmp;
+	char	**paths;
 
 	i = -1;
 	while (envp[++i])
@@ -62,7 +62,7 @@ void	find_cmd_current_path(char *cmd) // NOT NOW
 	{
 		free(tmp);
 		tmp = NULL;
-		cmd  = NULL;
+		cmd = NULL;
 	}
 	else
 	{
@@ -95,17 +95,16 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	find_cmd_current_path(cmd);
 }
 
-void    cmd_checker(char *argv[], char *envp[], int *fd)
+void	cmd_checker(char *argv[], char *envp[], int *fd)
 {
-	t_data	data;
+	t_data		data;
 	static int	first_time = 1;
-	
+
 	data.content0 = ft_split(argv[2], ' ');
 	data.content1 = ft_split(argv[3], ' ');
 	data.paths = get_paths(envp);
 	data.fd = fd;
 	printf("[%s][%s]**\n", data.content0[0], data.content1[0]);
-
 	printf("[%d][%d]", data.fd[0], data.fd[1]);
 	if (first_time == 1)
 	{
@@ -119,9 +118,9 @@ void    cmd_checker(char *argv[], char *envp[], int *fd)
 		printf("[%s][%s][%s][%s]", data.abs_cmd0, data.abs_cmd1, data.content0[0], data.content1[0]);
 		return ;
 	}
-		/*	ENV VAR(PATH) NOT FOUND	*/
-		/*	SEARCH IN CURRENT PATH	*/
-		printf("[%s][%s]", data.abs_cmd0, data.abs_cmd1);
-		find_cmd_current_path(data.content0[0]); //NOT NOW
-		find_cmd_current_path(data.content1[0]); //NOT NOW
+	/*	ENV VAR(PATH) NOT FOUND	*/
+	/*	SEARCH IN CURRENT PATH	*/
+	printf("[%s][%s]", data.abs_cmd0, data.abs_cmd1);
+	find_cmd_current_path(data.content0[0]); //NOT NOW
+	find_cmd_current_path(data.content1[0]); //NOT NOW
 }

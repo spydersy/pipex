@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 12:18:51 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 13:39:49 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ void	find_cmd_current_path(void) // NOT NOW
 
 }
 
-void    cmd_checker(char *argv[], char *envp[])
+void    cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data	data;
 	
+	// printf("[%d][%d]", fd[0], fd[1]);
 	data.content0 = ft_split(argv[2], ' ');
 	data.content1 = ft_split(argv[3], ' ');
 	data.paths = get_paths(envp);

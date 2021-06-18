@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:11:01 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 05:14:02 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:21:16 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int main(int argc, char *argv[], char *envp[])
     {
         return (pipex(argv, envp));
     }
-    ft_error();
+    ft_error("ERROR:\nARGS", 1);
     return (-1);
 }

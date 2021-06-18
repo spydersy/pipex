@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 18:10:52 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/18 18:19:39 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,32 @@ char    **get_paths(char *envp[])
 	}
 }
 
-void	match_paths(char **paths, t_data data)
+char	*match_paths(t_data data, char **cmd)
 {
-	
+	int		i;
+	char	*tmp;
+	static int first_time = 1;
+
+	i = -1;
+	if (cmd)
+	{}
+	if (first_time == 1)
+	{
+		while (data.paths[++i])
+		{
+			tmp = ft_strjoin(data.paths[i], "/");
+			free(data.paths[i]);
+			data.paths[i] = tmp;
+		}
+		first_time = 0;
+		i = -1;
+		while (data.paths[++i])
+		{
+			printf("PATH : [%s]\n", data.paths[i]);
+		}
+		ft_error("DBG", 1);
+	}
+	return (NULL);
 }
 
 void	find_cmd_current_path(void) // NOT NOW
@@ -57,7 +80,8 @@ void    cmd_checker(char *argv[], char *envp[], int *fd)
 	printf("[%d][%d]", data.fd[0], data.fd[1]);
 	if (data.paths != NULL)
 	{
-		match_paths(data.paths, data);
+		match_paths(data, &data.content0[0]);
+		match_paths(data, &data.content1[0]);
 		return ;
 	}
 		/*	ENV VAR(PATH) NOT FOUND	*/

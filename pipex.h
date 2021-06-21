@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/18 19:24:51 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/21 13:06:04 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ typedef struct s_data
 }				t_data;
 
 void	ft_error(char *descriptor, int flag);
+void    to_execution(t_data data);
 void	cmd_checker(char *argv[], char *envp[], int *fd);
 
 int		pipex(char *argc[], char *envp[]);
 int		*file_checker(char *argv[]);
 int		arguments_checker(char *argc[], char *envp[]);
+
 #endif

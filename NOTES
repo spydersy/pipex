@@ -1,0 +1,7 @@
+waitpid
+wait
+pipe
+dup
+dup2
+execve
+fork

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 11:21:43 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/22 15:35:52 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
+# include <sys/types.h>
+# include <sys/wait.h>
 
 /*      COLORS          */
 # define KNRM  "\x1B[0m"

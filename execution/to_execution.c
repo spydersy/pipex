@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 12:47:27 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/22 16:15:25 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,24 +75,33 @@
 // 	return (0);
 // }
 
-void	launch_process(int statement)
-{
-	if (statement)
-	{
-		
-	}
-}
-
 void	to_execution(t_data data)
 {
-	int		exit_statement;
-
-	exit_statement = 0;
-	if (data.fd[0] < 1)
+	int		fds[2];
+	int		wstatus;
+	pid_t	ret;
+	int	WEXITSTATUS = 0;
+	
+	if (pipe(fds) == -1)
+		ft_error(NULL, 1);
+	ret = fork();
+	if (ret == 0)
 	{
-		exit_statement = 1;
+		printf("CHILD [%d]\n", ret);
+		printf("open : [%d]\n", open("vdfsvdsfvfdb", O_RDONLY));
+		printf("***********************\n");
+		exit(EXIT_FAILURE);
+	//	perror("error child");
+		
 	}
-	else if (data.fd[1])
-	launch_process(exit_statement);
-	exit(exit_statement);
+	else
+	{
+	//	wstatus = 0;
+	
+		printf("wait : [%d]\n", waitpid(ret, &wstatus, WEXITSTATUS));
+		printf("WSTATUS : [%d]\n", wstatus % 255);
+		printf("PARENT [%d]\n", ret);
+	//	perror("error");
+		exit(wstatus % 255);
+	}
 }

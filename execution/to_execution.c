@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 10:27:53 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:47:27 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,24 +75,24 @@
 // 	return (0);
 // }
 
-void	to_execution(t_data data)
+void	launch_process(int statement)
 {
-	int		status;
-	int		pipes[2];
-	pid_t	pid;
-
-	status = 1;
-	if (data.fd[0] < 0)
-		status = 0;
-	pipe(pipes);
-	pid = 0;
-	pid = fork();
-	if (pid == 0)
+	if (statement)
 	{
 		
 	}
-	else
-	{
+}
 
+void	to_execution(t_data data)
+{
+	int		exit_statement;
+
+	exit_statement = 0;
+	if (data.fd[0] < 1)
+	{
+		exit_statement = 1;
 	}
+	else if (data.fd[1])
+	launch_process(exit_statement);
+	exit(exit_statement);
 }

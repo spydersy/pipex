@@ -1,0 +1,24 @@
+/usr/bin/ld: ./parsing/cmd_checker.o: in function `get_paths':
+cmd_checker.c:(.text+0x3c): undefined reference to `ft_strncmp'
+/usr/bin/ld: cmd_checker.c:(.text+0xb3): undefined reference to `ft_split'
+/usr/bin/ld: ./parsing/cmd_checker.o: in function `join_bs':
+cmd_checker.c:(.text+0x10e): undefined reference to `ft_strjoin'
+/usr/bin/ld: ./parsing/cmd_checker.o: in function `find_cmd_current_path':
+cmd_checker.c:(.text+0x193): undefined reference to `ft_strjoin'
+/usr/bin/ld: ./parsing/cmd_checker.o: in function `match_paths':
+cmd_checker.c:(.text+0x22e): undefined reference to `ft_strjoin'
+/usr/bin/ld: cmd_checker.c:(.text+0x273): undefined reference to `ft_strdup'
+/usr/bin/ld: ./parsing/cmd_checker.o: in function `cmd_checker':
+cmd_checker.c:(.text+0x2f5): undefined reference to `ft_split'
+/usr/bin/ld: cmd_checker.c:(.text+0x311): undefined reference to `ft_split'
+/usr/bin/ld: cmd_checker.c:(.text+0x3e4): undefined reference to `to_execution'
+/usr/bin/ld: cmd_checker.c:(.text+0x425): undefined reference to `to_execution'
+/usr/bin/ld: ./parsing/file_checker.o: in function `file_checker':
+file_checker.c:(.text+0x88): undefined reference to `ft_putstr_fd'
+/usr/bin/ld: file_checker.c:(.text+0xa0): undefined reference to `ft_putstr_fd'
+/usr/bin/ld: file_checker.c:(.text+0xb1): undefined reference to `ft_putstr_fd'
+/usr/bin/ld: file_checker.c:(.text+0xde): undefined reference to `ft_putstr_fd'
+/usr/bin/ld: file_checker.c:(.text+0xef): undefined reference to `ft_putstr_fd'
+/usr/bin/ld: ./utils/ft_error.o:ft_error.c:(.text+0x24): more undefined references to `ft_putstr_fd' follow
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:33: pipex] Error 1

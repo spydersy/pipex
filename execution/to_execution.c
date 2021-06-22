@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_execution.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 14:16:42 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:27:53 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,38 +61,38 @@
 // }
 
 
-int	main()
-{
-	int ret;
-
-	char *argv[] = {"cat", "to_execution.c", NULL};
-	char *envp[] = {NULL};
-	char *cmd = "/bin/cat";
-
-	ret = execve(cmd, argv, envp);
-	printf("ERROR[%d]\n", ret);
-	perror(cmd);
-	return (0);
-}
-
-// void	to_execution(t_data data)
+// int	main()
 // {
-// 	int		status;
-// 	int		pipes[2];
-// 	pid_t	pid;
+// 	int ret;
 
-// 	status = 1;
-// 	if (data.fd[0] < 0)
-// 		status = 0;
-// 	pipe(pipes);
-// 	pid = 0;
-// 	pid = fork();
-// 	if (pid == 0)
-// 	{
-		
-// 	}
-// 	else
-// 	{
+// 	char *argv[] = {"cat", "to_execution.c", NULL};
+// 	char *envp[] = {NULL};
+// 	char *cmd = "/bin/cat";
 
-// 	}
+// 	ret = execve(cmd, argv, envp);
+// 	printf("ERROR[%d]\n", ret);
+// 	perror(cmd);
+// 	return (0);
 // }
+
+void	to_execution(t_data data)
+{
+	int		status;
+	int		pipes[2];
+	pid_t	pid;
+
+	status = 1;
+	if (data.fd[0] < 0)
+		status = 0;
+	pipe(pipes);
+	pid = 0;
+	pid = fork();
+	if (pid == 0)
+	{
+		
+	}
+	else
+	{
+
+	}
+}

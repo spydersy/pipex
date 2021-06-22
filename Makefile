@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/22 10:38:26 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/22 16:07:54 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,7 @@ SRCS=			$(PARSING_SRCS)\
 OBJS=			$(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
-		clang-9 -Wall -Werror -Wextra $(OBJS)
-		clang-9 $(OBJS) -o $(NAME)
+		gcc -Wall -Werror -Wextra $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

@@ -1,7 +1,7 @@
-waitpid
-wait
-pipe
-dup
-dup2
-execve
-fork
+waitpid =======>
+wait    =======>
+pipe    =======>
+dup     =======>
+dup2    =======> 
+execve  =======> 1st argument(const char *path=path to bin) / 2nd argument(argv : argv[0](bin) ... ) / 3rd argument(envp)  
+fork    =======>

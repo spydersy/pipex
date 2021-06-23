@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 13:20:41 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:02:40 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,27 +77,7 @@
 
 void	to_execution(t_data data)
 {
-	int ret;
-	int	status;
-
-	ret = fork();
-	if (ret < 0)
-		ft_error("FORK", 1);
-	if (ret == 0)
-	{
-		int x = open("gggggggggg", O_RDONLY);
-			exit(1);
-		
-	}
-	else
-	{
-		int f;
-		waitpid(ret, &status, 0);
-		if (WIFEXITED(status))
-		{
-			printf("******\n");
-			f = WEXITSTATUS(status);
-		}
-		printf("[%d][%d]", f, status);
-	}
+    printf("[%d][%d][%s][%s][%s][%s]\n", data.fd[0], data.fd[1],
+    data.abs_cmd0, data.abs_cmd1,
+    data.content0[0], data.content1[0]);
 }

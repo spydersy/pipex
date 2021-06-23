@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 10:17:03 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:52:47 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@
 
 /*		ERRORS			*/
 # define SUCCESS		0
-# define PERMISSION		1
-# define NOSUCHFILE		2
+# define PERMISSION		X
+# define NOSUCHFILE		1
 # define CMDNOTFOUND	3
 
 typedef struct s_data
 {
 	int		*fd;
+	int		exitstat;
 	char	**content0;
 	char	**content1;
 	char	*filein;

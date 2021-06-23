@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 10:25:28 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:51:25 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,33 +77,10 @@
 
 void	to_execution(t_data data)
 {
-	int		fds[2];
-	int		wstatus;
-	pid_t	ret;
-	int	WEXITSTATUS = 0;
-	
-	if (pipe(fds) == -1)
-		ft_error(NULL, 1);
-	ret = fork();
-	if (ret == 0)
+	// int		pipe[2];
+
+	if (data.fd[0] < 0)
 	{
-		printf("CHILD [%d]\n", ret);
-		char *args[] = {"ls", "./.",NULL};
-		char *envp[] = {NULL};
-		printf("EXECVE : [%d]\n", execve("/bin/lfffs", args, envp));
-		// printf("open : [%d]\n", open("vdfsvdsfvfdb", O_RDONLY));
-		printf("***********************\n");
-		// exit(EXIT_FAILURE);
-	}
-	else
-	{
-		printf("wait : [%d]\n", waitpid(ret, &wstatus, 0));
-		printf("WSTATUS : [%d]\n", wstatus % 255);
-		printf("PARENT [%d]\n", ret);
-    	if (WIFEXITED(wstatus))
-    	{
-    	    int exit_status = WEXITSTATUS(wstatus);        
-    	    printf("Exit status of the child was %d\n", exit_status);
-    	}
+		printf("ERRRRRRRRRRROR\n");
 	}
 }

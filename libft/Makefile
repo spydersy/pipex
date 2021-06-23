@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abelarif <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 21:43:38 by abelarif          #+#    #+#              #
-#    Updated: 2020/01/10 21:43:40 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/23 12:36:49 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ft_strnstr.o ft_strrchr.o ft_tolower.o ft_toupper.o ft_substr.o ft_strjoin.o ft_
 ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
 $(NAME):
-		gcc -Wall -Wextra -Werror -c $(SRCS)
+		clang-9 -Wall -Wextra -Werror -c $(SRCS)
 		ar -rc $(NAME) $(OBJS)
 
 all: $(NAME)

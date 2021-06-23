@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_execution.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 11:51:25 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:20:41 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,27 @@
 
 void	to_execution(t_data data)
 {
-	// int		pipe[2];
+	int ret;
+	int	status;
 
-	if (data.fd[0] < 0)
+	ret = fork();
+	if (ret < 0)
+		ft_error("FORK", 1);
+	if (ret == 0)
 	{
-		printf("ERRRRRRRRRRROR\n");
+		int x = open("gggggggggg", O_RDONLY);
+			exit(1);
+		
+	}
+	else
+	{
+		int f;
+		waitpid(ret, &status, 0);
+		if (WIFEXITED(status))
+		{
+			printf("******\n");
+			f = WEXITSTATUS(status);
+		}
+		printf("[%d][%d]", f, status);
 	}
 }

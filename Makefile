@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
+#    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/23 10:19:46 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/23 12:36:40 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ OBJS=			$(SRCS:.c=.o)
 FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		gcc $(FLAGS) $(OBJS) -o $(NAME)
+		clang-9 $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_execution.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 16:15:25 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:25:28 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,20 +88,22 @@ void	to_execution(t_data data)
 	if (ret == 0)
 	{
 		printf("CHILD [%d]\n", ret);
-		printf("open : [%d]\n", open("vdfsvdsfvfdb", O_RDONLY));
+		char *args[] = {"ls", "./.",NULL};
+		char *envp[] = {NULL};
+		printf("EXECVE : [%d]\n", execve("/bin/lfffs", args, envp));
+		// printf("open : [%d]\n", open("vdfsvdsfvfdb", O_RDONLY));
 		printf("***********************\n");
-		exit(EXIT_FAILURE);
-	//	perror("error child");
-		
+		// exit(EXIT_FAILURE);
 	}
 	else
 	{
-	//	wstatus = 0;
-	
-		printf("wait : [%d]\n", waitpid(ret, &wstatus, WEXITSTATUS));
+		printf("wait : [%d]\n", waitpid(ret, &wstatus, 0));
 		printf("WSTATUS : [%d]\n", wstatus % 255);
 		printf("PARENT [%d]\n", ret);
-	//	perror("error");
-		exit(wstatus % 255);
+    	if (WIFEXITED(wstatus))
+    	{
+    	    int exit_status = WEXITSTATUS(wstatus);        
+    	    printf("Exit status of the child was %d\n", exit_status);
+    	}
 	}
 }

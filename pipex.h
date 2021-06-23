@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/22 15:35:52 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:17:03 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # define KMAG  "\x1B[35m"
 # define KCYN  "\x1B[36m"
 # define KWHT  "\x1B[37m"
+
+/*		ERRORS			*/
+# define SUCCESS		0
+# define PERMISSION		1
+# define NOSUCHFILE		2
+# define CMDNOTFOUND	3
 
 typedef struct s_data
 {

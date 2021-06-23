@@ -6,3 +6,5 @@ dup2    =======>
 execve  =======> 1st argument(const char *path=path to bin) / 2nd argument(argv : argv[0](bin) ... ) / 3rd argument(envp)  
 fork    =======>
 # define WIFEXITED(status)	__WIFEXITED (status)
+https://www.geeksforgeeks.org/exit-status-child-process-linux/
+https://dev.to/kumar_abhirup/a-beginner-s-guide-for-setting-up-autocomplete-on-ohmyzsh-hyper-with-plugins-themes-47f2

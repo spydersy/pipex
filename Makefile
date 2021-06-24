@@ -39,7 +39,7 @@ SRCS=			$(PARSING_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)
 
-FLAGS=			-Wall -Werror -Wextra
+FLAGS=			-Wall -Werror -Wextra -g
 
 $(NAME): $(OBJS)
 		clang-9 $(FLAGS) $(OBJS) -o $(NAME)

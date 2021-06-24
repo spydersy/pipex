@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 14:02:40 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/23 20:38:28 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,51 @@
 // 	return (0);
 // }
 
-void	to_execution(t_data data)
+// void	to_execution(t_data data)
+// {
+    // printf("[%d][%d][%s][%s][%s][%s]\n", data.fd[0], data.fd[1],
+    // data.abs_cmd0, data.abs_cmd1,
+    // data.content0[0], data.content1[0]);
+    // int pid = fork();
+    // int status;
+    // if (pid == 0)
+    // {
+        // printf("child0\n");
+    // }
+    // else
+    // {
+        // waitpid(pid, &status, 0);
+        // printf("parent0\n");
+        // pid = fork();
+        // if (pid != 0)
+        // {
+            // waitpid(pid, &status, 0);
+            // printf("parent1\n");
+        // }
+        // else
+        // {
+            // printf("child1\n");
+        // }
+    // }
+// }
+
+void    to_execution(t_data data)
 {
-    printf("[%d][%d][%s][%s][%s][%s]\n", data.fd[0], data.fd[1],
-    data.abs_cmd0, data.abs_cmd1,
-    data.content0[0], data.content1[0]);
+    // printf("[%d][%d][%s][%s][%s][%s]\n",
+    // data.fd[0], data.fd[1],
+    // data.abs_cmd0, data.abs_cmd1,
+    // data.content0[0], data.content1[0]);
+    if (data.content0)
+    {
+        
+    }
 }
+
+// int     main()
+// {
+    // int i;
+
+    // char    *cmd = NULL;
+    // char    *args[] = {};
+    // return (0);
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_execution.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 20:38:28 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:19:27 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,11 @@ void    to_execution(t_data data)
     // data.content0[0], data.content1[0]);
     if (data.content0)
     {
-        
     }
+    printf("[%d][%d][%s][%s][%s][%s]\n",
+    data.fd[0], data.fd[1],
+    data.abs_cmd0, data.abs_cmd1,
+    data.content0[0], data.content1[0]);
 }
 
 // int     main()

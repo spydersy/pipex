@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/23 12:36:40 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/24 10:22:48 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,10 @@ SRCS=			$(PARSING_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)
 
-FLAGS=			-Wall -Werror -Wextra -g
+FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		clang-9 $(FLAGS) $(OBJS) -o $(NAME)
+		gcc $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
@@ -55,4 +55,5 @@ fclean: clean
 re: fclean all
 
 fsanitize: fclean $(OBJS)
-		clang-9 $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
+		gcc $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cmd_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 20:36:31 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:21:01 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,6 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	find_cmd_current_path(cmd);
 }
 
-t_data	set_exit_value(t_data data)
-{
-	if (data.content0)
-	{}
-}
-
 void	cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data		data;
@@ -126,5 +120,5 @@ void	cmd_checker(char *argv[], char *envp[], int *fd)
 	}
 	find_cmd_current_path(data.content0[0]);
 	find_cmd_current_path(data.content1[0]);
-	to_execution(set_exit_value(data));
+	to_execution(data);
 }

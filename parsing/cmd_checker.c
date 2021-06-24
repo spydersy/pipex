@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 12:21:08 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 15:48:22 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,30 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	find_cmd_current_path(cmd);
 }
 
+char	**get_envp(char **envp)
+{
+	char	**arr;
+	int		i;
+
+	i = 0;
+	while (envp[i])
+	{
+		i++;
+	}
+	arr = malloc(sizeof(char *) * (i + 1));
+	if (arr == NULL)
+		ft_error(NULL, 1);
+	i = -1;
+	while (envp[++i])
+	{
+		arr[i] = ft_strdup(envp[i]);
+		if (arr[i] == NULL)
+			ft_error(NULL, 1);
+	}
+	arr[i] = NULL;
+	return (arr);
+}
+
 t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data		data;
@@ -104,7 +128,8 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 
 	data.content0 = ft_split(argv[2], ' ');
 	data.content1 = ft_split(argv[3], ' ');
-	data.paths = get_paths(envp);
+	data.envp = get_envp(envp);
+	data.paths = get_paths(data.envp);
 	data.fd = fd;
 	if (first_time == 1)
 	{

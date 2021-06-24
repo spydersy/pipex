@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 15:20:05 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 15:34:36 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_data
 	int		*fd;
 	char	**content0;
 	char	**content1;
+	char	**envp;
 	char	**paths;
 	char	*abs_cmd0;
 	char	*abs_cmd1;

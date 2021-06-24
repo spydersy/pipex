@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 13:07:42 by abelarif          #+#    #+#             */
-/*   Updated: 2020/01/09 13:08:23 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 14:26:32 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/24 10:57:34 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*p;
-	unsigned char	l;
-	unsigned long	i;
+	size_t i;
 
 	i = 0;
-	p = b;
-	l = c;
-	while (i < len)
+	if (n == 0)
+		return (0);
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		p[i] = l;
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (p);
+	return (0);
 }

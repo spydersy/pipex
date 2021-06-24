@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 12:56:55 by abelarif          #+#    #+#             */
-/*   Updated: 2020/08/17 08:05:08 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 13:08:43 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/24 10:57:10 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
-int		ft_isprint(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c <= 126 && c >= 32)
-		return (1);
-	else
-		return (0);
+	write(fd, &c, 1);
 }

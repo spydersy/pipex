@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 13:17:14 by abelarif          #+#    #+#             */
-/*   Updated: 2020/01/09 13:17:46 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:57:28 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

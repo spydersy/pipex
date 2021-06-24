@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 12:55:31 by abelarif          #+#    #+#             */
-/*   Updated: 2020/08/17 08:05:23 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 14:25:07 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/24 10:57:31 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
-int		ft_isascii(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c <= 127 && c >= 0)
-		return (1);
-	else
-		return (0);
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

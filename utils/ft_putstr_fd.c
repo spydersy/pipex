@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 14:36:12 by abelarif          #+#    #+#             */
-/*   Updated: 2020/01/09 14:37:10 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 13:11:18 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/24 10:57:18 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
-int		ft_tolower(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c <= 90 && c >= 65)
-		return (c + 32);
-	else
-		return (c);
+	int i;
+
+	i = 0;
+	if (s)
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 }

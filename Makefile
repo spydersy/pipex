@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
+#    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/24 10:22:48 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/24 11:00:43 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,17 @@ PARSING_SRCS=	./parsing/args_checker.c\
 EXECUTION_SRCS=	./execution/to_execution.c\
 
 UTILS_SRCS=		./utils/ft_error.c\
-
-LIBFT_SRCS=		./libft/ft_strncmp.c\
-				./libft/ft_split.c\
-				./libft/ft_strjoin.c\
-				./libft/ft_strdup.c\
-				./libft/ft_putstr_fd.c\
-				./libft/ft_putchar_fd.c\
-				./libft/ft_strlen.c\
+				./utils/ft_strncmp.c\
+				./utils/ft_split.c\
+				./utils/ft_strjoin.c\
+				./utils/ft_strdup.c\
+				./utils/ft_putstr_fd.c\
+				./utils/ft_putchar_fd.c\
+				./utils/ft_strlen.c\
 
 SRCS=			$(PARSING_SRCS)\
 				$(EXECUTION_SRCS)\
 				$(UTILS_SRCS)\
-				$(LIBFT_SRCS)\
 				$(PIPEX_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)

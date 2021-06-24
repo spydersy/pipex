@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 13:17:14 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 10:57:28 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 11:52:25 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	if (!(p = malloc((lens1 + lens2 + 1) * sizeof(char))))
+	p = malloc((lens1 + lens2 + 1) * sizeof(char));
+	if (p == NULL)
 		return (0);
 	i = -1;
 	while (++i < lens1)

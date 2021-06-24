@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/24 11:00:43 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/24 11:02:25 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,4 +54,3 @@ re: fclean all
 
 fsanitize: fclean $(OBJS)
 		gcc $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
-

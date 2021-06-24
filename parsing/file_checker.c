@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:17:21 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/23 14:07:13 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 11:50:55 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	*file_checker(char *argv[])
 		ft_error(NULL, 1);
 	infile = open(argv[1], O_RDONLY);
 	outfile = open(argv[4], O_WRONLY | O_CREAT, 0666);
-	printf("infile | outfile : [%d][%d]\n", infile, outfile);
 	if (infile < 0)
 	{	
 		ft_putstr_fd(KRED, 2);

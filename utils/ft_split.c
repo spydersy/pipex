@@ -6,13 +6,13 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 21:42:12 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 10:57:22 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 11:54:35 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-static	size_t		len_word(const char *s, char c)
+static	size_t	len_word(const char *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -26,7 +26,7 @@ static	size_t		len_word(const char *s, char c)
 	return (len);
 }
 
-static	size_t		count_word(const char *s, char c)
+static	size_t	count_word(const char *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -44,7 +44,7 @@ static	size_t		count_word(const char *s, char c)
 	return (count);
 }
 
-void				*free_split(char **split, int k)
+void	*free_split(char **split, int k)
 {
 	while (k >= 0)
 	{
@@ -56,7 +56,7 @@ void				*free_split(char **split, int k)
 	return (NULL);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -65,13 +65,13 @@ char				**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	if (!s || !(split = (char **)malloc(sizeof(char *)
-					* (count_word(s, c) + 1))))
+	split = (char **)malloc(sizeof(char *) * (count_word(s, c) + 1));
+	if (s == NULL || split == NULL)
 		return (NULL);
 	while (i < count_word(s, c))
 	{
-		if (!(split[i] = (char *)malloc(sizeof(char)
-						* (len_word(&s[k], c) + 1))))
+		split[i] = (char *)malloc(sizeof(char) * (len_word(&s[k], c) + 1));
+		if (split[i] == NULL)
 			return ((free_split(split, k - 1)));
 		j = 0;
 		while (s[k] == c)

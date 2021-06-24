@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:17:21 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 11:50:55 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:26:20 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int	*file_checker(char *argv[])
 	outfile = open(argv[4], O_WRONLY | O_CREAT, 0666);
 	if (infile < 0)
 	{	
-		ft_putstr_fd(KRED, 2);
-		ft_putstr_fd(argv[1], 2);
-		ft_putstr_fd(": ", 2);
+		ft_putstr_fd(KRED, STDERROR);
+		ft_putstr_fd(argv[1], STDERROR);
+		ft_putstr_fd(": ", STDERROR);
 		ft_error(NULL, 0);
 	}
 	if (outfile < 0)
 	{
-		ft_putstr_fd(argv[1], 2);
-		ft_putstr_fd(":", 2);
+		ft_putstr_fd(argv[1], STDERROR);
+		ft_putstr_fd(":", STDERROR);
 		ft_error(NULL, 0);
 	}
 	fd[0] = infile;

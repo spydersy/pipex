@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 13:04:07 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:14:28 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	first_command(t_data data)
 		ft_error(NULL, 1);
 	if (pid == 0)
 	{
+		if (data.fd[0] == -1)
+			exit (NOSUCHFILE);
 		
 	}
 }

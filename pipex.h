@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 12:52:32 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:25:14 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@
 # define NOSUCHFILE		1
 # define PERMISSION		126
 # define CMDNOTFOUND	127
-
+# define STDIN			0
+# define STDOUT			1
+# define STDERROR		2
 typedef struct s_data
 {
 	int		*fd;

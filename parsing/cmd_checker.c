@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 10:21:01 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:21:08 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	find_cmd_current_path(cmd);
 }
 
-void	cmd_checker(char *argv[], char *envp[], int *fd)
+t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data		data;
 	static int	first_time = 1;
@@ -116,9 +116,9 @@ void	cmd_checker(char *argv[], char *envp[], int *fd)
 		match_paths(data, data.content0[0], &data.abs_cmd0);
 		match_paths(data, data.content1[0], &data.abs_cmd1);
 		to_execution(data);
-		return ;
+		return (data);
 	}
 	find_cmd_current_path(data.content0[0]);
 	find_cmd_current_path(data.content1[0]);
-	to_execution(data);
+	return (to_execution(data));
 }

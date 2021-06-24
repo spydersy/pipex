@@ -6,17 +6,18 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:14:41 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/21 20:56:46 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:57:42 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-int	arguments_checker(char *argc[], char *envp[])
+t_data	arguments_checker(char *argc[], char *envp[])
 {
-	int	*fd;
+	int		*fd;
+	t_data	data;
 
 	fd = file_checker(argc);
-	cmd_checker(argc, envp, fd);
-	return (0);
+	data = cmd_checker(argc, envp, fd);
+	return (data);
 }

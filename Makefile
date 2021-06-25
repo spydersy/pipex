@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/24 12:23:08 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/25 11:29:30 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJS=			$(SRCS:.c=.o)
 FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		clang-9 $(FLAGS) $(OBJS) -o $(NAME)
+		gcc $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
@@ -54,4 +54,4 @@ fclean: clean
 re: fclean all
 
 fsanitize: fclean $(OBJS)
-		clang-9 $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
+		gcc $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)

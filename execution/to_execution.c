@@ -6,47 +6,78 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 18:00:04 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 12:28:47 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-void	second_command(t_data data, int *fdes)
+pid_t	first_command(t_data data, int *fdes)
 {
-	if (fdes[0] || data.fd[1])
-	{
-		
-	}
-}
+	pid_t	pid0;
 
-void	first_command(t_data data, int *fdes)
-{
-	pid_t	pid;
-
-	pid = fork();
-	if (pid == -1)
+	pid0 = fork();
+	if (pid0 == -1)
 		ft_error(NULL, 1);
-	if (pid == 0)
+	if (pid0 == 0)
 	{
 		if (data.fd[0] == -1)
-			exit (NOSUCHFILE);
+			exit(NOSUCHFILE);
+		if (data.abs_cmd0 == NULL)
+			exit(CMDNOTFOUND);
+		if (dup2(fdes[1], STDOUT) == -1)
+			ft_error(NULL, 1);
 		if (dup2(data.fd[0], STDIN) == -1)
 			ft_error(NULL, 1);
-		if (execve(data.abs_cmd0, data.content0, NULL) == -1)
+		close(fdes[0]);
+		close(fdes[1]);
+		if (execve(data.abs_cmd0, data.content0, data.envp) == -1)
 			ft_error(NULL, 1);
+		exit (0);
 	}
-	
+	return (pid0);
+}
+
+pid_t	second_command(t_data data, int *fdes)
+{
+	pid_t	pid1;
+
+	pid1 = fork();
+	if (pid1 == -1)
+		ft_error(NULL, 1);
+	if (pid1 == 0)
+	{
+		if (data.fd[1] == -1)
+			exit(NOSUCHFILE);
+		if (data.abs_cmd1 == NULL)
+			exit(CMDNOTFOUND);
+		if (dup2(fdes[0], STDIN) == -1)
+			ft_error(NULL, 1);
+		if (dup2(data.fd[1], STDOUT) == -1)
+			ft_error(NULL, 1);
+		close(fdes[0]);
+		close(fdes[1]);
+		if (execve(data.abs_cmd1, data.content1, data.envp) == -1)
+			ft_error(NULL, 1);
+		exit (0);
+	}
+	return (pid1);
 }
 
 t_data	to_execution(t_data data)
 {
-	int	fdes[2];
+	int		fdes[2];
+	int		status[2];
+	pid_t	pid0;
+	pid_t	pid1;
 
 	if (pipe(fdes) == -1)
 		ft_error(NULL, 1);
-	printf("FDES : [%d][%d]\n", fdes[0], fdes[1]);
-	first_command(data, fdes);
-	second_command(data,fdes);
+	pid0 = first_command(data, fdes);
+	pid1 = second_command(data, fdes);
+	close(fdes[0]);
+	close(fdes[1]);
+	waitpid(pid0, &status[0], 0);
+	waitpid(pid1, &status[1], 0);
 	return (data);
 }

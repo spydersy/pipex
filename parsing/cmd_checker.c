@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cmd_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:33:50 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 12:04:18 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	int		i;
 	char	*tmp;
 	int		fd;
-
+	char	*err;
 	i = -1;
 	while (data.paths[++i])
 	{
 		tmp = ft_strjoin(data.paths[i], cmd);
-		fd = open(tmp, O_RDONLY);
+		fd = open(tmp, O_RDONLY, 0666);
 		if (fd < 0)
 		{
 			free(tmp);
@@ -72,7 +72,7 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 			free(tmp);
 			tmp = NULL;
 			close(fd);
-			break ;
+			return ;
 		}
 	}
 	*abs_cmd = ft_strdup(NULL);
@@ -119,8 +119,8 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 	}
 	if (data.paths != NULL)
 	{
-		match_paths(data, data.content0[0], &data.abs_cmd0);
-		match_paths(data, data.content1[0], &data.abs_cmd1);
+		match_paths(data, data.content0[0], &(data.abs_cmd0));
+		match_paths(data, data.content1[0], &(data.abs_cmd1));
 		to_execution(data);
 		return (data);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_execution.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:43:49 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 12:27:47 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,13 @@ t_data	to_execution(t_data data)
 
 	if (pipe(fdes) == -1)
 		ft_error(NULL, 1);
+	
 	pid0 = first_command(data, fdes);
 	pid1 = second_command(data, fdes);
 	close(fdes[0]);
 	close(fdes[1]);
 	waitpid(pid0, &status[0], 0);
 	waitpid(pid1, &status[1], 0);
+	printf("[%d][%d]\n", status[0], status[1]);
 	return (data);
 }

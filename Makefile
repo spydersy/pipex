@@ -41,7 +41,7 @@ OBJS=			$(SRCS:.c=.o)
 FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		gcc -g3 $(FLAGS) $(OBJS) -o $(NAME)
+		clang-9 $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
@@ -54,4 +54,4 @@ fclean: clean
 re: fclean all
 
 fsanitize: fclean $(OBJS)
-		gcc $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
+		clang-9 $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)

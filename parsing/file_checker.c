@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:17:21 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 12:24:33 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:32:49 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	*file_checker(char *argv[])
 	if (fd == NULL)
 		ft_error(NULL, 1);
 	infile = open(argv[1], O_RDONLY);
-	outfile = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC);
+	outfile = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0666);
 	if (infile < 0)
 	{	
 		ft_putstr_fd(KRED, STDERROR);

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 12:27:47 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:23:08 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ t_data	to_execution(t_data data)
 	close(fdes[1]);
 	waitpid(pid0, &status[0], 0);
 	waitpid(pid1, &status[1], 0);
-	printf("[%d][%d]\n", status[0], status[1]);
+	if (WIFEXITED(status[1]))
+	{
+		data.exit_status = WEXITSTATUS(status[1]);
+	}
+	// printf("[%d][%d][%d]\n", status[0], status[1], data.exit_status);
+	printf("-->|%d|\n", data.exit_status);
 	return (data);
 }

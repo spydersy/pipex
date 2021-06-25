@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 12:04:18 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:26:35 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,6 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 	{
 		match_paths(data, data.content0[0], &(data.abs_cmd0));
 		match_paths(data, data.content1[0], &(data.abs_cmd1));
-		to_execution(data);
-		return (data);
 	}
 	return (to_execution(data));
 }

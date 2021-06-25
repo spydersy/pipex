@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:13:25 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 12:44:18 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:14:51 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int	pipex(char *argc[], char *envp[])
 
 	data = arguments_checker(argc, envp);
 	free_data(data);
-	return (0);
+	printf("SLAOUI ZAML : %d\n", data.exit_status);
+	return (data.exit_status);
 }

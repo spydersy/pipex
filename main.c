@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:11:01 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 12:55:53 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:16:17 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int	main(int argc, char *argv[], char *envp[])
 {
+	int ret = 0;
 	if (argc == 5)
 	{
-		return (pipex(argv, envp));
+		ret = pipex(argv, envp);
+		printf("RET : %d\n", ret);
+		return (ret);
 	}
 	ft_error("ERROR:\nARGS", 1);
 	return (-1);

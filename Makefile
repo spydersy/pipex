@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/25 11:29:30 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/25 13:05:44 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJS=			$(SRCS:.c=.o)
 FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		gcc $(FLAGS) $(OBJS) -o $(NAME)
+		gcc -g3 $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 13:14:25 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 10:57:25 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:18:13 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	len = 0;
+	if (s1 == NULL)
+	{
+		s = malloc(sizeof(1));
+		s = NULL;
+		return (s);
+	}
 	while (s1[len])
 		len++;
 	len++;

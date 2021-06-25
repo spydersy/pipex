@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:21:45 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 15:49:48 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:18:58 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ void	free_str_arr(char **str_arr)
 
 void	free_str(char *str)
 {
-	free(str);
-	str = NULL;
+	if (str)
+	{
+		free(str);
+		str = NULL;
+	}
 }
 
 void	free_int(int *arr)

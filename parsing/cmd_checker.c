@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/24 15:48:22 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:33:50 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,6 @@ void	join_bs(char **paths)
 	}	
 }
 
-void	find_cmd_current_path(char *cmd)
-{
-	char	*tmp;
-
-	tmp = ft_strjoin("./", cmd);
-	if (tmp == NULL)
-		ft_error(NULL, 1);
-	if (open(tmp, O_RDONLY) < 0)
-	{
-		free(tmp);
-		tmp = NULL;
-		cmd = NULL;
-	}
-	else
-	{
-		cmd = tmp;
-	}
-}
-
 void	match_paths(t_data data, char *cmd, char **abs_cmd)
 {
 	int		i;
@@ -94,7 +75,7 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 			break ;
 		}
 	}
-	find_cmd_current_path(cmd);
+	*abs_cmd = ft_strdup(NULL);
 }
 
 char	**get_envp(char **envp)
@@ -143,7 +124,5 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 		to_execution(data);
 		return (data);
 	}
-	find_cmd_current_path(data.content0[0]);
-	find_cmd_current_path(data.content1[0]);
 	return (to_execution(data));
 }

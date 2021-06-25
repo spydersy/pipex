@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:34:44 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:43:49 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ pid_t	first_command(t_data data, int *fdes)
 			ft_putstr_fd(KRED, STDERROR);
 			ft_putstr_fd("command not found: ", STDERROR);
 			ft_putstr_fd(data.content0[0], STDERROR);
+			ft_putstr_fd("\n", STDERROR);
 			exit(CMDNOTFOUND);
 		}
-		if (dup2(fdes[1], STDOUT) == -1)
-			ft_error(NULL, 1);
-		if (dup2(data.fd[0], STDIN) == -1)
+		if (dup2(fdes[1], STDOUT) == -1 || dup2(data.fd[0], STDIN) == -1)
 			ft_error(NULL, 1);
 		close(fdes[0]);
 		close(fdes[1]);
@@ -55,10 +54,14 @@ pid_t	second_command(t_data data, int *fdes)
 		if (data.fd[1] == -1)
 			exit(NOSUCHFILE);
 		if (data.abs_cmd1 == NULL)
+		{
+			ft_putstr_fd(KRED, STDERROR);
+			ft_putstr_fd("command not found: ", STDERROR);
+			ft_putstr_fd(data.content1[0], STDERROR);
+			ft_putstr_fd("\n", STDERROR);
 			exit(CMDNOTFOUND);
-		if (dup2(fdes[0], STDIN) == -1)
-			ft_error(NULL, 1);
-		if (dup2(data.fd[1], STDOUT) == -1)
+		}
+		if (dup2(fdes[0], STDIN) == -1 || dup2(data.fd[1], STDOUT) == -1)
 			ft_error(NULL, 1);
 		close(fdes[0]);
 		close(fdes[1]);

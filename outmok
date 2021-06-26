@@ -1,7 +1,7 @@
 total 97000
-drwxr-xr-x  32 abelarif  2019      1088 Jun 26 18:25 .
+drwxr-xr-x  32 abelarif  2019      1088 Jun 26 18:21 .
 drwx------  13 abelarif  2019       442 Jun 26 17:40 ..
-drwxr-xr-x  13 abelarif  2019       442 Jun 26 18:25 .git
+drwxr-xr-x  13 abelarif  2019       442 Jun 26 18:21 .git
 -rw-r--r--   1 abelarif  2019        98 Jun 26 17:40 .vimrc
 -rw-r--r--   1 abelarif  2019      1685 Jun 26 17:41 Makefile
 -rw-r--r--   1 abelarif  2019      2374 Jun 26 17:40 NOTES
@@ -12,14 +12,14 @@ drwxr-xr-x   3 abelarif  2019       102 Jun 26 17:57 execution
 -rw-r--r--   1 abelarif  2019        77 Jun 26 17:40 infile
 -rw-r--r--   1 abelarif  2019        94 Jun 26 17:40 ja
 -rwxr-xr-x   1 abelarif  2019         0 Jun 26 17:40 ls
--rw-r--r--   1 abelarif  2019      1179 Jun 26 18:25 main.c
+-rw-r--r--   1 abelarif  2019      1137 Jun 26 17:40 main.c
 -rw-r--r--   1 abelarif  2019      1909 Jun 26 18:10 mok
 -rw-r--r--   1 abelarif  2019         0 Jun 26 17:44 oooooo
--rw-r--r--   1 abelarif  2019         0 Jun 26 18:25 outfile
+-rw-r--r--   1 abelarif  2019      1909 Jun 26 18:20 outfile
 -rw-r--r--   1 abelarif  2019  48238592 Jun 26 17:43 outfiltfiiiiil
--rw-r--r--   1 abelarif  2019      1969 Jun 26 18:21 outmok
+-rw-r--r--   1 abelarif  2019         0 Jun 26 18:21 outmok
 drwxr-xr-x   5 abelarif  2019       170 Jun 26 17:57 parsing
--rwxr-xr-x   1 abelarif  2019     19276 Jun 26 18:25 pipex
+-rwxr-xr-x   1 abelarif  2019     19228 Jun 26 18:06 pipex
 -rw-r--r--   1 abelarif  2019      1054 Jun 26 17:40 pipex.c
 drwxr-xr-x   3 abelarif  2019       102 Jun 26 17:41 pipex.dSYM
 -rw-r--r--   1 abelarif  2019      2245 Jun 26 17:40 pipex.h

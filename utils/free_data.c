@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:21:45 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06    #0 0x4c981e in free_str_arr /home/kali/Desktop/pipex/./utils/free_data.c/26 12:28:27 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 17:56:19 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

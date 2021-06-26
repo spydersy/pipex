@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 12:44:41 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 10:25:05 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 
+int		len_checker(char **argv);
 int		*file_checker(char *argv[]);
 int		pipex(char *argc[], char *envp[]);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

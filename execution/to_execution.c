@@ -6,11 +6,20 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:49:42 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:23:08 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 11:07:10 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
+
+void	command_not_found(char *cmd, int exitstatus)
+{
+	ft_putstr_fd(KRED, STDERROR);
+	ft_putstr_fd("command not found: ", STDERROR);
+	ft_putstr_fd(cmd, STDERROR);
+	ft_putstr_fd("\n", STDERROR);
+	exit(exitstatus);
+}
 
 pid_t	first_command(t_data data, int *fdes)
 {
@@ -25,11 +34,7 @@ pid_t	first_command(t_data data, int *fdes)
 			exit(NOSUCHFILE);
 		if (data.abs_cmd0 == NULL)
 		{
-			ft_putstr_fd(KRED, STDERROR);
-			ft_putstr_fd("command not found: ", STDERROR);
-			ft_putstr_fd(data.content0[0], STDERROR);
-			ft_putstr_fd("\n", STDERROR);
-			exit(CMDNOTFOUND);
+			command_not_found(data.content0[0], CMDNOTFOUND);
 		}
 		if (dup2(fdes[1], STDOUT) == -1 || dup2(data.fd[0], STDIN) == -1)
 			ft_error(NULL, 1);
@@ -55,11 +60,7 @@ pid_t	second_command(t_data data, int *fdes)
 			exit(NOSUCHFILE);
 		if (data.abs_cmd1 == NULL)
 		{
-			ft_putstr_fd(KRED, STDERROR);
-			ft_putstr_fd("command not found: ", STDERROR);
-			ft_putstr_fd(data.content1[0], STDERROR);
-			ft_putstr_fd("\n", STDERROR);
-			exit(CMDNOTFOUND);
+			command_not_found(data.content1[0], CMDNOTFOUND);
 		}
 		if (dup2(fdes[0], STDIN) == -1 || dup2(data.fd[1], STDOUT) == -1)
 			ft_error(NULL, 1);
@@ -81,7 +82,6 @@ t_data	to_execution(t_data data)
 
 	if (pipe(fdes) == -1)
 		ft_error(NULL, 1);
-	
 	pid0 = first_command(data, fdes);
 	pid1 = second_command(data, fdes);
 	close(fdes[0]);
@@ -92,7 +92,5 @@ t_data	to_execution(t_data data)
 	{
 		data.exit_status = WEXITSTATUS(status[1]);
 	}
-	// printf("[%d][%d][%d]\n", status[0], status[1], data.exit_status);
-	printf("-->|%d|\n", data.exit_status);
 	return (data);
 }

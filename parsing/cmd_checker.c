@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:26:35 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 12:35:05 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**get_paths(char *envp[])
 			break ;
 	}
 	if (envp[i] == NULL)
-		return (NULL);
+		return (ft_split("", '\0'));
 	else
 	{
 		paths = ft_split(envp[i] + 6, ':');
@@ -42,6 +42,8 @@ void	join_bs(char **paths)
 	char	*tmp;
 
 	i = -1;
+	if (paths == NULL)
+		return ;
 	while (paths[++i])
 	{
 		tmp = ft_strjoin(paths[i], "/");
@@ -55,7 +57,7 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 	int		i;
 	char	*tmp;
 	int		fd;
-	char	*err;
+
 	i = -1;
 	while (data.paths[++i])
 	{
@@ -106,11 +108,15 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 {
 	t_data		data;
 	static int	first_time = 1;
-
 	data.content0 = ft_split(argv[2], ' ');
 	data.content1 = ft_split(argv[3], ' ');
 	data.envp = get_envp(envp);
 	data.paths = get_paths(data.envp);
+	// int	j = -1;
+	// while (data.paths[++j])
+	// {
+	// 	printf("PATHS : [%s]\n", data.paths[j]);
+	// }
 	data.fd = fd;
 	if (first_time == 1)
 	{
@@ -122,5 +128,15 @@ t_data	cmd_checker(char *argv[], char *envp[], int *fd)
 		match_paths(data, data.content0[0], &(data.abs_cmd0));
 		match_paths(data, data.content1[0], &(data.abs_cmd1));
 	}
+	else
+	{
+		data.abs_cmd0 = ft_strdup(data.content0[0]);
+		data.abs_cmd1 = ft_strdup(data.content1[0]);
+		if (data.abs_cmd0 == NULL || data.abs_cmd1 == NULL)
+			ft_error(NULL, 1);
+	}
+	printf("[%s][%s][%s][%s]\n",
+	data.abs_cmd0, data.abs_cmd1,
+	data.content0[0], data.content1[0]);
 	return (to_execution(data));
 }

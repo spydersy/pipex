@@ -3,22 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:11:58 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/25 13:32:17 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 10:31:31 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-// void	error_descr(int err, )
-// {
-// 		ft_putstr_fd(KRED, STDERROR);
-// 		ft_putstr_fd(argv[1], STDERROR);
-// 		ft_putstr_fd(": ", STDERROR);
-// 		ft_error(NULL, 0);
-// }
+int	len_checker(char **argv)
+{
+	int	i;
+
+	i = -1;
+	while (argv[++i])
+	{
+		if (ft_strlen(argv[i]) == 0)
+			return (1);
+	}
+	return (0);
+}
 
 void	ft_error(char *descriptor, int flag)
 {

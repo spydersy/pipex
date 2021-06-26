@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
+#    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/25 13:05:44 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/26 11:06:36 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ OBJS=			$(SRCS:.c=.o)
 
 FLAGS=			-Wall -Werror -Wextra
 
-$(NAME): $(OBJS)
-		clang-9 $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME): 
+		clang-9 -g3 $(FLAGS) $(SRCS) -o $(NAME)
 
 all: $(NAME)
 
@@ -54,4 +54,4 @@ fclean: clean
 re: fclean all
 
 fsanitize: fclean $(OBJS)
-		clang-9 $(FLAGS) -g3 -fsanitize=address $(OBJS) -o $(NAME)
+		clang-9 $(FLAGS) -g3 -fsanitize=address $(SRCS) -o $(NAME)

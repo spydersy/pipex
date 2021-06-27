@@ -1,43 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 05:11:58 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/26 20:16:03 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/26 19:51:40 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/27 08:33:27 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-int	len_checker(char **argv)
+int	max(int i, int j)
 {
-	int	i;
-
-	i = -1;
-	while (argv[++i])
-	{
-		if (ft_strlen(argv[i]) == 0)
-			return (1);
-	}
-	return (0);
-}
-
-void	ft_error(char *descriptor, int flag)
-{
-	char	*err;
-
-	err = NULL;
-	ft_putstr_fd(KRED, STDERROR);
-	if (descriptor != NULL)
-		ft_putstr_fd(descriptor, STDERROR);
-	else
-	{
-		perror(err);
-	}
-	ft_putstr_fd(KWHT, STDERROR);
-	if (flag == 1)
-		exit(EXIT_FAILURE);
+	if (i > j)
+		return (i);
+	return (j);
 }

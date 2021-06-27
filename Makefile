@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/26 17:41:12 by abelarif         ###   ########.fr        #
+#    Updated: 2021/06/26 20:07:11 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ UTILS_SRCS=		./utils/ft_error.c\
 				./utils/ft_putchar_fd.c\
 				./utils/ft_strlen.c\
 				./utils/free_data.c\
+				./utils/max.c\
 
 SRCS=			$(PARSING_SRCS)\
 				$(EXECUTION_SRCS)\

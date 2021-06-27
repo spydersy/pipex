@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 11:42:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/26 17:55:42 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:31:36 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	match_paths(t_data data, char *cmd, char **abs_cmd)
 			return ;
 		}
 	}
-	*abs_cmd = ft_strdup(NULL);
+	*abs_cmd = ft_strdup(cmd);
 }
 
 char	**get_envp(char **envp)

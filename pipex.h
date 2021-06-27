@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 05:09:59 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/26 10:25:05 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/27 08:14:15 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define KWHT  "\x1B[37m"
 
 # define SUCCESS		0
-# define NOSUCHFILE		1
+# define NOSUCHFILE		127
 # define PERMISSION		126
 # define CMDNOTFOUND	127
 # define STDIN			0
@@ -65,6 +65,7 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 
+int		max(int i, int j);
 int		len_checker(char **argv);
 int		*file_checker(char *argv[]);
 int		pipex(char *argc[], char *envp[]);

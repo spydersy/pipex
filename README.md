@@ -27,7 +27,6 @@ This project is the discovery in detail and by programming of a UNIX mechanism t
   - perror
   - strerror
   - exit
-<br/>
 
 ### Objectives:
 Your objective is to code the Pipex program. It should be executed in this way:
